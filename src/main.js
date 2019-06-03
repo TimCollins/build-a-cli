@@ -20,17 +20,20 @@ export async function createProject(options) {
   };
 
   const currentFileUrl = import.meta.url;
-  const templateDir = path.resolve(
-    new URL(currentFileUrl).pathname,
+  let templateDir = path.resolve(
+    new URL(currentFileUrl).pathname.substring(1),
     '../../templates',
     options.template.toLowerCase()
   );
+
+  templateDir = templateDir.replace('%20', ' ');
+
   options.templateDirectory = templateDir;
 
   try {
     await access(templateDir, fs.constants.R_OK);
   } catch (error) {
-    console.error('Invalid template name %s', chalk.red.bold('ERROR'));
+    console.error(`${chalk.red.bold('ERROR')} Invalid template name "${templateDir}"`);
     process.exit(1);
   }
 
