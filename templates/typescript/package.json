@@ -1,0 +1,14 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+  },
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^3.3.3333"
+  }
+}
