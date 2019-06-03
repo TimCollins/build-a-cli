@@ -19,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "esm": "^3.2.25"
+    "arg": "^4.1.0",
+    "esm": "^3.2.25",
+    "inquirer": "^6.3.1"
   }
 }
